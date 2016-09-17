@@ -15,7 +15,6 @@
     - [Ordering](#ordering-of-property-declarations)
     - [Variables](#variables)
     - [Mixins](#mixins)
-    - [Extend directive](#extend-directive)
     - [Nested selectors](#nested-selectors)
   1. [CSS architecture](#css-architecture)
     - [Settings](#settings)
@@ -62,7 +61,7 @@ Finally, properties are what give the selected elements of a rule declaration th
 
 ### Formatting
 
-**_Rule: _**
+** _Rules:_ **
 
 ```yml
 # Line Spacing
@@ -165,7 +164,7 @@ I recommend creating JavaScript-specific attributes to bind to, prefixed with da
 
 2. `@include` declarations
 
-    **_Rule: _**
+    ** _Rule:_ **
 
     ```yml
     # Mixins
@@ -185,7 +184,7 @@ I recommend creating JavaScript-specific attributes to bind to, prefixed with da
 
 3. `@extend` declarations
 
-    **_Rules: _**
+    ** _Rules:_ **
 
     ```yml
     # Extends
@@ -240,7 +239,7 @@ Mixins should be used to DRY up your code, add clarity, or abstract complexity--
 
 ### Nested selectors
 
-**_Rules: _**
+** _Rules:_ **
 
 ```yml
 nesting-depth:
@@ -286,7 +285,7 @@ externalize configuration.
 
 Also, you have to externalize mixins and functions you'll be susceptible to use in components/objects.
 
-### Web component
+### Web components
 
 The web component pattern is not only a frontend development pattern, it can be used in css architecture.
 More the CSS' structure is dry, simple, more the CSS is maintainable.
