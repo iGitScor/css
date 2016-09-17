@@ -61,7 +61,7 @@ Finally, properties are what give the selected elements of a rule declaration th
 
 ### Formatting
 
-** _Rules:_ **
+**_Rules:_**
 
 ```yml
 # Line Spacing
@@ -164,7 +164,7 @@ I recommend creating JavaScript-specific attributes to bind to, prefixed with da
 
 2. `@include` declarations
 
-    ** _Rule:_ **
+    **_Rule:_**
 
     ```yml
     # Mixins
@@ -184,7 +184,7 @@ I recommend creating JavaScript-specific attributes to bind to, prefixed with da
 
 3. `@extend` declarations
 
-    ** _Rules:_ **
+    **_Rules:_**
 
     ```yml
     # Extends
@@ -239,7 +239,7 @@ Mixins should be used to DRY up your code, add clarity, or abstract complexity--
 
 ### Nested selectors
 
-** _Rules:_ **
+**_Rules:_**
 
 ```yml
 nesting-depth:
