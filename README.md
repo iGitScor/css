@@ -145,7 +145,7 @@ I recommend creating JavaScript-specific attributes to bind to, prefixed with da
 
 ### Syntax
 
-* Use the `.scss` syntax, never the original `.sass` syntax
+* Use the `.scss` syntax
 * Order your regular CSS and `@include` declarations logically (see below)
 
 ### Ordering of property declarations
