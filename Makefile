@@ -63,5 +63,5 @@ documentation:
 ## Deploy
 deploy: documentation deploy-documentation
 
-deploy-application:
+deploy-documentation:
 	node ./config/gh-deploy.js
