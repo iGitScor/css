@@ -1,0 +1,229 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="description" content="Documentation resources"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"><title>Documentation</title><!-- Page styles--><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"><link rel="stylesheet" href="http://code.getmdl.io/1.2.1/material.cyan-pink.min.css"><link rel="stylesheet" href="css/index.min.css"></head><body><header><div class="mdl-layout__header-row" role="navigation"><a class="mdl-layout-title" href="/" title="Home">iScor</a></div></header><div class="demo-blog mdl-layout mdl-js-layout has-drawer is-upgraded"><main class="mdl-layout__content"><div class="demo-blog__posts mdl-grid"><div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--8-col"><div class="mdl-card__media mdl-color-text--grey-50"><h3><a href="https://github.com/iGitScor/css">CSS guidelines</a></h3></div><div class="mdl-card__supporting-text meta mdl-color-text--grey-600"><div><strong>CSS and preprocessor guidelines</strong></div></div></div><div class="mdl-card mdl-shadow--2dp something-else mdl-cell mdl-cell--8-col mdl-cell--4-col-desktop"><a class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-button--primary" href="demo/"><i class="material-icons mdl-color-text--white" role="presentation">launch</i><span class="visuallyhidden">add</span></a><div class="mdl-card__media mdl-color--white mdl-color-text--grey-600"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Visual_Studio_Code_0.10.1_icon.png/64px-Visual_Studio_Code_0.10.1_icon.png">Typescript</div><div class="mdl-card__supporting-text meta meta--fill mdl-color-text--grey-600"><div><strong>Github</strong></div><ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="menubtn"><li class="mdl-menu__item"><a class="mdl-menu__item" href="https://github.com/iGitScor/css">Repository</a></li><li class="mdl-menu__item"><a class="mdl-menu__item" href="https://github.com/iGitScor/css/issues">Issues</a></li><li class="mdl-menu__item"><a class="mdl-menu__item" href="https://github.com/iGitScor/css/pulls">Pull requests</a></li></ul><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="menubtn"><i class="material-icons" role="presentation">more_vert</i><span class="visuallyhidden">show menu</span></button></div></div><div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col"><div class="mdl-card__supporting-text meta mdl-color-text--grey-600"><div><h1 id="css-preprocessor-styleguide">CSS / Preprocessor Styleguide</h1>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol>
+<li><a href="#terminology">Terminology</a><ul>
+<li><a href="#rule-declaration">Rule Declaration</a></li>
+<li><a href="#selectors">Selectors</a></li>
+<li><a href="#properties">Properties</a></li>
+</ul>
+</li>
+<li><a href="#css">CSS</a><ul>
+<li><a href="#formatting">Formatting</a></li>
+<li><a href="#id-selectors">ID Selectors</a></li>
+<li><a href="#javascript-hooks">JavaScript hooks</a></li>
+</ul>
+</li>
+<li><a href="#preprocessor">Preprocessor</a><ul>
+<li><a href="#syntax">Syntax</a></li>
+<li><a href="#ordering-of-property-declarations">Ordering</a></li>
+<li><a href="#variables">Variables</a></li>
+<li><a href="#mixins">Mixins</a></li>
+<li><a href="#nested-selectors">Nested selectors</a></li>
+</ul>
+</li>
+<li><a href="#css-architecture">CSS architecture</a><ul>
+<li><a href="#settings">Settings</a></li>
+<li><a href="#web-components">Web components</a></li>
+</ul>
+</li>
+</ol>
+<h2 id="terminology">Terminology</h2>
+<h3 id="rule-declaration">Rule declaration</h3>
+<p>A “rule declaration” is the name given to a selector (or a group of selectors) with an accompanying group of properties. Here&#39;s an example:</p>
+<pre><code class="lang-css">.example {
+  color: #dfdfdf;
+}
+</code></pre>
+<h3 id="selectors">Selectors</h3>
+<p>In a rule declaration, “selectors” are the bits that determine which elements in the DOM tree will be styled by the defined properties. Selectors can match HTML elements, as well as an element&#39;s class, ID, or any of its attributes. Here are some examples of selectors:</p>
+<pre><code class="lang-css">.my-element-class {
+  /* ... */
+}
+
+[aria-hidden] {
+  /* ... */
+}
+</code></pre>
+<h3 id="properties">Properties</h3>
+<p>Finally, properties are what give the selected elements of a rule declaration their style. Properties are key-value pairs, and a rule declaration can contain one or more property declarations. Property declarations look like this:</p>
+<pre><code class="lang-css">/* some selector */ {
+  background: #f1f1f1;
+  color: #333;
+}
+</code></pre>
+<h2 id="css">CSS</h2>
+<h3 id="formatting">Formatting</h3>
+<p><strong><em>Rules:</em></strong></p>
+<pre><code class="lang-yml"># Line Spacing
+one-declaration-per-line: 1
+empty-line-between-blocks: 1
+single-line-per-selector: 1
+
+no-ids: 1
+
+# Nesting
+force-attribute-nesting: 0
+force-element-nesting: 1
+force-pseudo-nesting: 0
+
+# Inner Spacing
+space-after-comma: 1
+space-before-colon: 1
+space-after-colon: 1
+space-before-brace: 1
+space-before-bang: 1
+space-after-bang: 1
+space-between-parens: 1
+# Some CSS tricks need no space
+space-around-operator: 0
+</code></pre>
+<ul>
+<li>Use soft tabs (2 spaces by tabulation) for indentation</li>
+<li>Prefer dashes over camelCasing in class names.</li>
+<li>Do not use ID selectors</li>
+<li>When using multiple selectors in a rule declaration, give each selector its own line.</li>
+<li>Put a space before the opening brace <code>{</code> in rule declarations</li>
+<li>In properties, put a space after, but not before, the <code>:</code> character.</li>
+<li>Put closing braces <code>}</code> of rule declarations on a new line</li>
+<li>Put blank lines between rule declarations</li>
+</ul>
+<p><strong>Bad</strong></p>
+<pre><code class="lang-css">.avatar{
+    border-radius:50%;
+    border:2px solid white; }
+
+.no, .nope, .not_good {
+}
+
+#selector-with-id {
+}
+</code></pre>
+<p><strong>Good</strong></p>
+<pre><code class="lang-css">.avatar {
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+.one,
+.selector,
+.per-line {
+}
+</code></pre>
+<h3 id="id-selectors">ID selectors</h3>
+<p>While it is possible to select elements by ID in CSS, it should generally be considered an anti-pattern. ID selectors introduce an unnecessarily high level of <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity">specificity</a> to your rule declarations, and they are not reusable.</p>
+<p>For more on this subject, read <a href="http://csswizardry.com/2014/07/hacks-for-dealing-with-specificity/">CSS Wizardry&#39;s article</a> on dealing with specificity.</p>
+<h3 id="javascript-hooks">JavaScript hooks</h3>
+<p>Avoid binding to the same class in both your CSS and JavaScript. Conflating the two often leads to, at a minimum, time wasted during refactoring when a developer must cross-reference each class they are changing, and at its worst, developers being afraid to make changes for fear of breaking functionality.</p>
+<p>I recommend creating JavaScript-specific attributes to bind to, prefixed with data for compatibility <code>data-</code>:</p>
+<pre><code class="lang-html">&lt;button class=&quot;btn btn-primary&quot; data-toggle&gt;Display/Hide content&lt;/button&gt;
+</code></pre>
+<h2 id="preprocessor">Preprocessor</h2>
+<h3 id="syntax">Syntax</h3>
+<ul>
+<li>Use the <code>.scss</code> syntax</li>
+<li>Order your regular CSS and <code>@include</code> declarations logically (see below)</li>
+</ul>
+<h3 id="ordering-of-property-declarations">Ordering of property declarations</h3>
+<ol>
+<li><p>Property declarations</p>
+<p> List all standard property declarations, anything that isn&#39;t an <code>@include</code> or a nested selector.</p>
+<pre><code class="lang-scss"> .btn-valid {
+   background: #0f0;
+   font-weight: bold;
+   // ...
+ }
+</code></pre>
+</li>
+<li><p><code>@include</code> declarations</p>
+<p> <strong><em>Rule:</em></strong></p>
+<pre><code class="lang-yml"> # Mixins
+ mixins-before-declarations: 0
+</code></pre>
+<p> Grouping <code>@include</code>s at the end makes it easier to read the entire selector.</p>
+<pre><code class="lang-scss"> .btn-valid {
+   background: #0f0;
+   font-weight: bold;
+   @include transition(background 0.5s ease);
+   // ...
+ }
+</code></pre>
+</li>
+<li><p><code>@extend</code> declarations</p>
+<p> <strong><em>Rules:</em></strong></p>
+<pre><code class="lang-yml"> # Extends
+ extends-before-mixins: 1
+ extends-before-declarations: 1
+ placeholder-in-extend: 1
+</code></pre>
+<p> Grouping <code>@extend</code> at the start makes it safier to herit properties from other objects or elements. Prefer use of placeholder.</p>
+<pre><code class="lang-scss"> .notification {
+   @extend %box;
+   background: #0f0;
+   // ...
+ }
+</code></pre>
+</li>
+<li><p>Nested selectors</p>
+<p> Nested selectors, <em>if necessary</em>, go last, and nothing goes after them. Add whitespace between your rule declarations and nested selectors, as well as between adjacent nested selectors. Apply the same guidelines as above to your nested selectors.</p>
+<pre><code class="lang-scss"> .btn {
+   background: #0f0;
+
+   .icon {
+     color: #fff;
+   }
+ }
+</code></pre>
+</li>
+</ol>
+<h3 id="variables">Variables</h3>
+<p>Prefer dash-cased variable names (e.g. <code>$my-variable</code>) over camelCased or snake_cased variable names.</p>
+<p>Always use hexadecimal values for color variables.</p>
+<pre><code class="lang-scss">$primary-color: #f4ac13;
+</code></pre>
+<p>Specify a default value in a component if it depends on a setting variable (e.g. grid generation with breakpoints variable)</p>
+<pre><code class="lang-scss">$accent-color: #f4ac13 !default;
+</code></pre>
+<h3 id="mixins">Mixins</h3>
+<p>Mixins should be used to DRY up your code, add clarity, or abstract complexity--in much the same way as well-named functions. Mixins that accept no arguments can be useful for this, but note that if you are not compressing your payload (e.g. gzip), this may contribute to unnecessary code duplication in the resulting styles.</p>
+<h3 id="nested-selectors">Nested selectors</h3>
+<p><strong><em>Rules:</em></strong></p>
+<pre><code class="lang-yml">nesting-depth:
+  - 1
+  - max-depth: 3
+</code></pre>
+<p><strong>Do not nest selectors more than three levels deep!</strong></p>
+<pre><code class="lang-scss">.page-container {
+  .content {
+    .card {
+      // STOP!
+    }
+  }
+}
+</code></pre>
+<p>When selectors become this long, you&#39;re likely writing CSS that is:</p>
+<ul>
+<li>Strongly coupled to the HTML (fragile) <em>—OR—</em></li>
+<li>Overly specific (powerful) <em>—OR—</em></li>
+<li>Not reusable</li>
+</ul>
+<p>Again: <strong>never nest ID selectors!</strong></p>
+<p>If you must use an ID selector in the first place (and you should really try not to), they should never be nested. If you find yourself doing this, you need to revisit your markup, or figure out why such strong specificity is needed. If you are writing well formed HTML and CSS, you should <strong>never</strong> need to do this.</p>
+<h2 id="css-architecture">CSS architecture</h2>
+<p>After multiple kind of works, the same conclusion is done, never let the CSS be a complex structure.
+For that, the recommendation is to split your styles in several files.</p>
+<p>A good approach is the ITCSS&#39; one.</p>
+<h3 id="settings">Settings</h3>
+<p>If you use preprocessors or modern css with variable, you <strong>must</strong> declare some variables in a specific place.
+In this file, you&#39;ve to specify colors, spacing, fonts, responsive breakpoints. Even if the project is small, it&#39;s a good practice to
+externalize configuration.</p>
+<p>Also, you have to externalize mixins and functions you&#39;ll be susceptible to use in components/objects.</p>
+<h3 id="web-components">Web components</h3>
+<p>The web component pattern is not only a frontend development pattern, it can be used in css architecture.
+More the CSS&#39; structure is dry, simple, more the CSS is maintainable.</p>
+<ul>
+<li>Elements - standard markups&#39; default style</li>
+<li>Object - no style scaffolding objects <em>(using spacing setting)</em></li>
+<li>Component - stylized components <em>(using color settings)</em></li>
+<li>Trumps - css helpers <em>(e.g: text alignment)</em></li>
+</ul>
+</div></div></div></div><footer class="mdl-mini-footer"><div class="mdl-mini-footer--left-section"><a class="mdl-mini-footer--social-btn social-btn social-btn__twitter" href="https://twitter.com/iTweetScor" target="_blank"><span class="visuallyhidden">Twitter</span></a></div></footer></main></div><script src="http://code.getmdl.io/1.2.1/material.min.js"></script></body></html>
