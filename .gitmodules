@@ -1,0 +1,3 @@
+[submodule "docs/tool"]
+	path = docs/tool
+	url = git@github.com:iGitScor/template-docs.git

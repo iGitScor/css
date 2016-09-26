@@ -1,0 +1,30 @@
+{
+  "name": "css",
+  "version": "1.0.0",
+  "license": "MIT",
+  "description": "CSS Guidelines",
+  "homepage": "https://github.com/iGitScor/css#readme",
+  "keywords": [
+    "css",
+    "preprocessor",
+    "guidelines"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iGitScor/css.git"
+  },
+  "bugs": {
+    "url": "https://github.com/iGitScor/css/issues"
+  },
+  "author": "iGitScor <sebastien.correaud@gmail.com> (http://iscor.me)",
+  "contributors": [
+    "iGitScor <sebastien.correaud@gmail.com> (http://iscor.me)"
+  ],
+  "scripts": {},
+  "devDependencies": {
+    "gh-pages": "^0.11.0"
+  },
+  "engines": {
+    "node": ">=0.12"
+  }
+}
